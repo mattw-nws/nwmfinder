@@ -48,6 +48,11 @@ Thumbs.db
 __pycache__/
 *.py[cod]
 .env
+
+# Sphinx docs build output #
+#############################
+doc/_build/
+
 .python-version
 
 # pyenv #

@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project]
+name = "nwmfinder"
+version = "0.0.1"
+dependencies = [
+]
+authors = [
+  { name="Matt Williamson" },
+]
+description = "A basic tool for finding NWM data given model variant and dates"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "Apache-2.0"
+license-files = ["LICEN[CS]E*"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest"
+]
+docs = [
+    "sphinx"
+]
+
+[project.urls]
+Homepage = "https://github.com/mattw-nws/nwmfinder"
+Issues = "https://github.com/mattw-nws/nwmfinder/issues"
