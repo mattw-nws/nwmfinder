@@ -181,7 +181,7 @@ class NwmFinder:
 
         cycles: list[Cycle] = []
         cycle_time = latest
-        for i in range(max(n_runs, 0) + 1):
+        for i in range(max(n_runs, 1)):
             cycle = self._build_forecast_cycle(variant, source, source_id, product, template, effective_stride, cycle_time)
             if i == 0:
                 cycle = _with_last_modified(cycle, last_modified)
