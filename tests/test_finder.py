@@ -112,6 +112,14 @@ def test_locate_channel_rt_still_hourly_for_same_model():
     cycles = finder.locate("medium_range_mem1", "NOMADS", init_time=init_time)
     assert [f.forecast_hour for f in cycles[0].files][:3] == [1, 2, 3]
 
+def test_find_multi_run_returns_n_cycles(monkeypatch):
+    from nwmfinder import _http
+
+    monkeypatch.setattr(_http, "head", lambda url, **kw: _http.HeadResult(200, None, False, None))
+
+    finder = NwmFinder()
+    cycles = finder.locate("analysis_assim_tm0_r24", "NOMADS")
+    assert len(cycles) == 24
 
 def test_locate_retrospective_terrain_uses_gwout_template():
     finder = NwmFinder()
