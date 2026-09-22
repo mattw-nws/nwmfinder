@@ -100,6 +100,8 @@ def _probe_forecast_hour(hours: int, stride: float) -> int:
     since that's the first (most current) one written.
     """
     if stride > 0:
+        if stride % 1 != 0:
+            return int((100*((hours*60)//60))+((hours*60)%60)) # Should work for non-whole-number hours.
         return hours
     return 0
 
